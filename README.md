@@ -15,7 +15,7 @@ It should be easily possible to generate binding for other languages as well.
 
 # Documentation
 
-You can read the full documentation [here](http://todo).
+You can read the full documentation [here](http://beschulz.github.com/kyototycoon/).
 
 # Performance
 
