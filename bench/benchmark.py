@@ -71,9 +71,9 @@ pykt_append  = bench_append(kt1)
 kyoto_append = bench_append(kt3)
 
 implementations = (
-	('pykt'    , kt1),
-	('swig kt' , kt2),
-	('pykt emu', kt3),
+	('pykt'        , kt1),
+	('kyototycoon' , kt2),
+	('pykt emu'    , kt3),
 )
 
 ops = (

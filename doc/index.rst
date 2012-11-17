@@ -18,6 +18,7 @@ Contents:
    license
    donate
    get_the_source
+   performance
 
 
 Indices and tables
