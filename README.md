@@ -1,4 +1,4 @@
-# wav2png
+# kyototycoon SWIG bindings for python
 
 Author: Benjamin Schulz
 
@@ -10,6 +10,8 @@ License: GPL, v2 or later
 Swig wrapper for the Kyoto Tycoon RemoteDB class.
 
 This project was created, because [pykt](https://github.com/mopemope/pykt) seems to be outdated and no longer maintained. The performance is quite good, it even outperformes pykt slightly.
+
+It should be easily possible to generate binding for other languages as well.
 
 # Documentation
 
