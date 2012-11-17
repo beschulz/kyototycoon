@@ -1,0 +1,232 @@
+/rpc/void
+Do nothing, just for testing.
+status code: 200.
+/rpc/echo
+Echo back the input data as the output data, just for testing.
+input: (optional): arbitrary records.
+output: (optional): corresponding records to the input data.
+status code: 200.
+/rpc/report
+Get the report of the server information.
+output: (optional): arbitrary records.
+status code: 200.
+/rpc/play_script
+Call a procedure of the script language extension.
+input: name: the name of the procedure to call.
+input: (optional): arbitrary records whose keys trail the character "_".
+output: (optional): arbitrary keys which trail the character "_".
+status code: 200, 450 (arbitrary logical error).
+/rpc/tune_replication
+Set the replication configuration.
+input: host: (optional): the name or the address of the master server. If it is omitted, replication is disabled.
+input: port: (optional): the port numger of the server. If it is omitted, the default port is specified.
+input: ts: (optional): the maximum time stamp of already read logs. If it is omitted, the current setting is not modified. If it is "now", the current time is specified.
+input: iv: (optional): the interval of each replication operation in milliseconds. If it is omitted, the current setting is not modified.
+status code: 200.
+/rpc/status
+Get the miscellaneous status information of a database.
+input: DB: (optional): the database identifier.
+output: count: the number of records.
+output: size: the size of the database file.
+output: (optional): arbitrary records for other information.
+status code: 200.
+/rpc/clear
+Remove all records in a database.
+input: DB: (optional): the database identifier.
+status code: 200.
+/rpc/synchronize
+Synchronize updated contents with the file and the device.
+input: DB: (optional): the database identifier.
+input: hard: (optional): for physical synchronization with the device.
+input: command: (optional): the command name to process the database file.
+status code: 200, 450 (the postprocessing command failed).
+/rpc/set
+Set the value of a record.
+input: DB: (optional): the database identifier.
+input: key: the key of the record.
+input: value: the value of the record.
+input: xt: (optional): the expiration time from now in seconds. If it is negative, the absolute value is treated as the epoch time. If it is omitted, no expiration time is specified.
+status code: 200.
+/rpc/add
+Add a record.
+input: DB: (optional): the database identifier.
+input: key: the key of the record.
+input: value: the value of the record.
+input: xt: (optional): the expiration time from now in seconds. If it is negative, the absolute value is treated as the epoch time. If it is omitted, no expiration time is specified.
+status code: 200, 450 (existing record was detected).
+/rpc/replace
+Replace the value of a record.
+input: DB: (optional): the database identifier.
+input: key: the key of the record.
+input: value: the value of the record.
+input: xt: (optional): the expiration time from now in seconds. If it is negative, the absolute value is treated as the epoch time. If it is omitted, no expiration time is specified.
+status code: 200, 450 (no record was corresponding).
+/rpc/append
+Append the value of a record.
+input: DB: (optional): the database identifier.
+input: key: the key of the record.
+input: value: the value of the record.
+input: xt: (optional): the expiration time from now in seconds. If it is negative, the absolute value is treated as the epoch time. If it is omitted, no expiration time is specified.
+status code: 200.
+/rpc/increment
+Add a number to the numeric integer value of a record.
+input: DB: (optional): the database identifier.
+input: key: the key of the record.
+input: num: the additional number.
+input: orig: (optional): the origin number. If it is omitted, 0 is specified. "try" means INT64MIN. "set" means INT64MAX.
+input: xt: (optional): the expiration time from now in seconds. If it is negative, the absolute value is treated as the epoch time. If it is omitted, no expiration time is specified.
+output: num: the result value.
+status code: 200, 450 (the existing record was not compatible).
+/rpc/increment_double
+Add a number to the numeric double value of a record.
+input: DB: (optional): the database identifier.
+input: key: the key of the record.
+input: num: the additional number.
+input: orig: (optional): the origin number. If it is omitted, 0 is specified. "try" means negative infinity. "set" means positive infinity.
+input: xt: (optional): the expiration time from now in seconds. If it is negative, the absolute value is treated as the epoch time. If it is omitted, no expiration time is specified.
+output: num: the result value.
+status code: 200, 450 (the existing record was not compatible).
+/rpc/cas
+Perform compare-and-swap.
+input: DB: (optional): the database identifier.
+input: key: the key of the record.
+input: oval: (optional): the old value. If it is omittted, no record is meant.
+input: nval: (optional): the new value. If it is omittted, the record is removed.
+input: xt: (optional): the expiration time from now in seconds. If it is negative, the absolute value is treated as the epoch time. If it is omitted, no expiration time is specified.
+status code: 200, 450 (the old value assumption was failed).
+/rpc/remove
+Remove a record.
+input: DB: (optional): the database identifier.
+input: key: the key of the record.
+status code: 200, 450 (no record was found).
+/rpc/get
+Retrieve the value of a record.
+input: DB: (optional): the database identifier.
+input: key: the key of the record.
+output: value: (optional): the value of the record.
+output: xt: (optional): the absolute expiration time. If it is omitted, there is no expiration time.
+status code: 200, 450 (no record was found).
+/rpc/check
+Check the existence of a record.
+input: DB: (optional): the database identifier.
+input: key: the key of the record.
+output: vsiz: (optional): the size of the value of the record.
+output: xt: (optional): the absolute expiration time. If it is omitted, there is no expiration time.
+status code: 200, 450 (no record was found).
+/rpc/seize
+Retrieve the value of a record and remove it atomically.
+input: DB: (optional): the database identifier.
+input: key: the key of the record.
+output: value: (optional): the value of the record.
+output: xt: (optional): the absolute expiration time. If it is omitted, there is no expiration time.
+status code: 200, 450 (no record was found).
+/rpc/set_bulk
+Store records at once.
+input: DB: (optional): the database identifier.
+input: xt: (optional): the expiration time from now in seconds. If it is negative, the absolute value is treated as the epoch time. If it is omitted, no expiration time is specified.
+input: atomic: (optional): to perform all operations atomically. If it is omitted, non-atomic operations are performed.
+input: (optional): arbitrary records whose keys trail the character "_".
+output: num: the number of stored reocrds.
+status code: 200.
+/rpc/remove_bulk
+Store records at once.
+input: DB: (optional): the database identifier.
+input: atomic: (optional): to perform all operations atomically. If it is omitted, non-atomic operations are performed.
+input: (optional): arbitrary keys which trail the character "_".
+output: num: the number of removed reocrds.
+status code: 200.
+/rpc/get_bulk
+Retrieve records at once.
+input: DB: (optional): the database identifier.
+input: atomic: (optional): to perform all operations atomically. If it is omitted, non-atomic operations are performed.
+input: (optional): arbitrary keys which trail "_".
+output: num: the number of retrieved reocrds.
+output: (optional): arbitrary keys which trail the character "_".
+status code: 200.
+/rpc/vacuum
+Scan the database and eliminate regions of expired records.
+input: DB: (optional): the database identifier.
+input: step: (optional): the number of steps. If it is omitted or not more than 0, the whole region is scanned.
+status code: 200.
+/rpc/match_prefix
+Get keys matching a prefix string.
+input: DB: (optional): the database identifier.
+input: prefix: the prefix string.
+input: max: (optional): the maximum number to retrieve. If it is omitted or negative, no limit is specified.
+output: num: the number of retrieved keys.
+output: (optional): arbitrary keys which trail the character "_". Each value specifies the order of the key.
+status code: 200.
+/rpc/match_regex
+Get keys matching a ragular expression string.
+input: DB: (optional): the database identifier.
+input: regex: the regular expression string.
+input: max: (optional): the maximum number to retrieve. If it is omitted or negative, no limit is specified.
+output: num: the number of retrieved keys.
+output: (optional): arbitrary keys which trail the character "_". Each value specifies the order of the key.
+status code: 200.
+/rpc/match_similar
+Get keys similar to a string in terms of the levenshtein distance.
+input: DB: (optional): the database identifier.
+input: origin: the origin string.
+input: range: (optional): the maximum distance of keys to adopt. If it is omitted or negative, 1 is specified.
+input: utf: (optional): flag to treat keys as UTF-8 strings. If it is omitted, false is specified.
+input: max: (optional): the maximum number to retrieve. If it is omitted or negative, no limit is specified.
+output: num: the number of retrieved keys.
+output: (optional): arbitrary keys which trail the character "_". Each value specifies the order of the key.
+status code: 200.
+/rpc/cur_jump
+Jump the cursor to the first record for forward scan.
+input: DB: (optional): the database identifier.
+input: CUR: the cursor identifier.
+input: key: (optional): the key of the destination record. If it is omitted, the first record is specified.
+status code: 200, 450 (cursor is invalidated).
+/rpc/cur_jump_back
+Jump the cursor to a record for forward scan.
+input: DB: (optional): the database identifier.
+input: CUR: the cursor identifier.
+input: key: (optional): the key of the destination record. If it is omitted, the last record is specified.
+status code: 200, 450 (cursor is invalidated), 501 (not implemented).
+/rpc/cur_step
+Step the cursor to the next record.
+input: CUR: the cursor identifier.
+status code: 200, 450 (cursor is invalidated).
+/rpc/cur_step_back
+Step the cursor to the previous record.
+input: CUR: the cursor identifier.
+status code: 200, 450 (cursor is invalidated), 501 (not implemented).
+/rpc/cur_set_value
+Set the value of the current record.
+input: CUR: the cursor identifier.
+input: value: the value of the record.
+input: step: (optional): to move the cursor to the next record. If it is omitted, the cursor stays at the current record.
+input: xt: (optional): the expiration time from now in seconds. If it is negative, the absolute value is treated as the epoch time. If it is omitted, no expiration time is specified.
+status code: 200, 450 (cursor is invalidated).
+/rpc/cur_remove
+Remove the current record.
+input: CUR: the cursor identifier.
+status code: 200, 450 (cursor is invalidated).
+/rpc/cur_get_key
+Get the key of the current record.
+input: CUR: the cursor identifier.
+input: step: (optional): to move the cursor to the next record. If it is omitted, the cursor stays at the current record.
+status code: 200, 450 (cursor is invalidated).
+/rpc/cur_get_value
+Get the value of the current record.
+input: CUR: the cursor identifier.
+input: step: (optional): to move the cursor to the next record. If it is omitted, the cursor stays at the current record.
+status code: 200, 450 (cursor is invalidated).
+/rpc/cur_get
+Get a pair of the key and the value of the current record.
+input: CUR: the cursor identifier.
+input: step: (optional): to move the cursor to the next record. If it is omitted, the cursor stays at the current record.
+output: xt: (optional): the absolute expiration time. If it is omitted, there is no expiration time.
+status code: 200, 450 (cursor is invalidated).
+/rpc/cur_seize
+Get a pair of the key and the value of the current record and remove it atomically.
+input: CUR: the cursor identifier.
+output: xt: (optional): the absolute expiration time. If it is omitted, there is no expiration time.
+status code: 200, 450 (cursor is invalidated).
+/rpc/cur_delete
+Delete a cursor implicitly.
+input: CUR: the cursor identifier.
+status code: 200, 450 (cursor is invalidated).
