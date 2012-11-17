@@ -44,3 +44,7 @@ doc/_build
 tests/.env
 *~
 virtualenv.py
+
+src/kyototycoon_wrap.cpp
+
+src/kyototycoon.py
