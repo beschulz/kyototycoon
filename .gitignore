@@ -43,3 +43,4 @@ Makefile_
 doc/_build
 tests/.env
 *~
+virtualenv.py
