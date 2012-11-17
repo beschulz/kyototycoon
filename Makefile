@@ -20,7 +20,7 @@ kyototycoon.py: ./src/kyototycoon.py
 	cp ./src/kyototycoon.py .
 
 doc: _kyototycoon.so kyototycoon.py
-	cd doc; make singlehtml
+	cd doc; make html
 
 all: _kyototycoon.so doc
 
@@ -34,3 +34,4 @@ clean:
 	rm -f *.pyc
 	rm -f ./src/kyototycoon_wrap.cpp
 	rm -f ./src/kyototycoon.py
+	cd doc; make clean
