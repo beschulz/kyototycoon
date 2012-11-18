@@ -16,9 +16,9 @@ Contents:
    tutorial
    api_spcification
    license
-   donate
    get_the_source
    performance
+   donate
 
 
 Indices and tables
