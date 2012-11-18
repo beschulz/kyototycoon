@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to kyototycoon’s documentation! &mdash; kyototycoon 0.0.1 documentation</title>
+    <title>9. Performance &mdash; kyototycoon 0.0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,8 +25,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="kyototycoon 0.0.1 documentation" href="#" />
-    <link rel="next" title="1. Getting started" href="getting_started.html" /> 
+    <link rel="top" title="kyototycoon 0.0.1 documentation" href="index.html" />
+    <link rel="prev" title="8. Get the source code" href="get_the_source.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,9 +39,9 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="getting_started.html" title="1. Getting started"
-             accesskey="N">next</a> |</li>
-        <li><a href="#">kyototycoon 0.0.1 documentation</a> &raquo;</li> 
+          <a href="get_the_source.html" title="8. Get the source code"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">kyototycoon 0.0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -50,30 +50,18 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="welcome-to-kyototycoon-s-documentation">
-<h1>Welcome to kyototycoon&#8217;s documentation!<a class="headerlink" href="#welcome-to-kyototycoon-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">1. Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html#installation">2. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">3. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html#a-quick-example-for-the-impatient">4. A quick example for the impatient</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_spcification.html">5. API Specification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html">6. License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="donate.html">7. Donate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get_the_source.html">8. Get the source code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance.html">9. Performance</a></li>
-</ul>
+  <div class="section" id="performance">
+<h1>9. Performance<a class="headerlink" href="#performance" title="Permalink to this headline">¶</a></h1>
+<p>The following is the output of benchmark.py it&#8217;s a modified version of the benchmark that ships with pykt. As always, do not trust a benchmark, that you have not forged yourself.</p>
+<p>The results:</p>
+<div class="highlight-python"><pre>implementation          set             get            gets       increment         replace           total
+pykt        3.0184381008148 2.3861417770386 4.6767139434814 1.2522919178009 1.0413010120392 12.3748867511749
+kyototycoon 1.0114710330963 1.1232841014862 3.0113148689270 0.6714899539948 0.7781660556793 6.5957260131836
+pykt emu    0.9092319011688 0.6884479522705 2.6841168403625 0.6197800636292 0.6409928798676 5.5425696372986</pre>
 </div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
-<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
-<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
-</ul>
+<p>pykt: <a class="reference external" href="https://github.com/mopemope/pykt">https://github.com/mopemope/pykt</a> (outdated, does not pass its own tests anymore)
+kyototycoon: this module
+pykt emu: an pykt emulation layer provided by kyototycoon</p>
 </div>
 
 
@@ -82,20 +70,12 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Welcome to kyototycoon&#8217;s documentation!</a><ul>
-</ul>
-</li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
-</ul>
-
-  <h4>Next topic</h4>
-  <p class="topless"><a href="getting_started.html"
-                        title="next chapter">1. Getting started</a></p>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="get_the_source.html"
+                        title="previous chapter">8. Get the source code</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="_sources/index.txt"
+    <li><a href="_sources/performance.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -125,9 +105,9 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="getting_started.html" title="1. Getting started"
-             >next</a> |</li>
-        <li><a href="#">kyototycoon 0.0.1 documentation</a> &raquo;</li> 
+          <a href="get_the_source.html" title="8. Get the source code"
+             >previous</a> |</li>
+        <li><a href="index.html">kyototycoon 0.0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
