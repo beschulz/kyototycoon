@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2. Cursor &mdash; kyototycoon 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="kyototycoon 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="1. Classes" href="classes.html" />
+    <link rel="next" title="3. FileStatus" href="class_FileStatus.html" />
+    <link rel="prev" title="1. DB" href="class_DB.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="class_FileStatus.html" title="3. FileStatus"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_DB.html" title="1. DB"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">kyototycoon 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../api_spcification.html" >5. API Specification</a> &raquo;</li>
+          <li><a href="classes.html" accesskey="U">1. Classes</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="cursor">
+<h1>2. Cursor<a class="headerlink" href="#cursor" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="kyototycoon.kyototycoon.Cursor">
+<em class="property">class </em><tt class="descclassname">kyototycoon.kyototycoon.</tt><tt class="descname">Cursor</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#kyototycoon.kyototycoon.Cursor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Proxy of C++ kyototycoon::Cursor class</p>
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.Cursor.error">
+<tt class="descname">error</tt><big>(</big><em>self</em><big>)</big> &rarr; Error<a class="headerlink" href="#kyototycoon.kyototycoon.Cursor.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the last error encountered.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="exceptions.html#kyototycoon.kyototycoon.Error" title="kyototycoon.kyototycoon.Error"><tt class="xref py py-class docutils literal"><span class="pre">kyototycoon.kyototycoon.Error</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.Cursor.get">
+<tt class="descname">get</tt><big>(</big><em>self</em>, <em>bool step = False</em><big>)</big> &rarr; __dummy_5__<a class="headerlink" href="#kyototycoon.kyototycoon.Cursor.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a pair of the key and the value of the current record.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>step</strong> &#8211; (optional) to move the cursor to the next record. If it is omitted, the cursor stays at the current record.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">tuple (key, value) of the current record</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.Cursor.get_key">
+<tt class="descname">get_key</tt><big>(</big><em>self</em>, <em>bool step = False</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.Cursor.get_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the key of the current record.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>step</strong> &#8211; (optional) to move the cursor to the next record. If it is omitted, the cursor stays at the current record.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.Cursor.get_value">
+<tt class="descname">get_value</tt><big>(</big><em>self</em>, <em>bool step = False</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.Cursor.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of the current record.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>step</strong> &#8211; (optional) to move the cursor to the next record. If it is omitted, the cursor stays at the current record.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.Cursor.jump">
+<tt class="descname">jump</tt><big>(</big><em>self</em>, <em>string key = &quot;&quot;</em><big>)</big> &rarr; bool<a class="headerlink" href="#kyototycoon.kyototycoon.Cursor.jump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Jump the cursor to the first record for forward scan.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> &#8211; (optional) the key of the destination record. If it is omitted, the first record is specified.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.Cursor.jump_back">
+<tt class="descname">jump_back</tt><big>(</big><em>self</em>, <em>string key = &quot;&quot;</em><big>)</big> &rarr; bool<a class="headerlink" href="#kyototycoon.kyototycoon.Cursor.jump_back" title="Permalink to this definition">¶</a></dt>
+<dd><p>Jump the cursor to a record for forward scan.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> &#8211; (optional) the key of the destination record. If it is omitted, the last record is specified.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.Cursor.remove">
+<tt class="descname">remove</tt><big>(</big><em>self</em><big>)</big> &rarr; bool<a class="headerlink" href="#kyototycoon.kyototycoon.Cursor.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the current record.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.Cursor.set_value">
+<tt class="descname">set_value</tt><big>(</big><em>self</em>, <em>string value</em>, <em>long long xt = max_ts</em>, <em>bool step = False</em><big>)</big> &rarr; bool<a class="headerlink" href="#kyototycoon.kyototycoon.Cursor.set_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the value of the current record.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>value</strong> &#8211; the value of the record.</li>
+<li><strong>step</strong> &#8211; (optional) to move the cursor to the next record. If it is omitted, the cursor stays at the current record.</li>
+<li><strong>xt</strong> &#8211; (optional) the expiration time from now in seconds. If it is negative, the absolute value is treated as the epoch time. If it is omitted, no expiration time is specified.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.Cursor.step">
+<tt class="descname">step</tt><big>(</big><em>self</em><big>)</big> &rarr; bool<a class="headerlink" href="#kyototycoon.kyototycoon.Cursor.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Step the cursor to the next record.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.Cursor.step_back">
+<tt class="descname">step_back</tt><big>(</big><em>self</em><big>)</big> &rarr; bool<a class="headerlink" href="#kyototycoon.kyototycoon.Cursor.step_back" title="Permalink to this definition">¶</a></dt>
+<dd><p>Step the cursor to the previous record.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_DB.html"
+                        title="previous chapter">1. DB</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="class_FileStatus.html"
+                        title="next chapter">3. FileStatus</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/class_Cursor.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="class_FileStatus.html" title="3. FileStatus"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="class_DB.html" title="1. DB"
+             >previous</a> |</li>
+        <li><a href="../index.html">kyototycoon 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../api_spcification.html" >5. API Specification</a> &raquo;</li>
+          <li><a href="classes.html" >1. Classes</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Benjamin Schulz.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -6,3 +6,7 @@ doc
 *.py
 *.pyc
 *.cpp
+*.egg
+tests
+*.egg-info
+.coverage

@@ -1,0 +1,313 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2. Exceptions &mdash; kyototycoon 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="kyototycoon 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="5. API Specification" href="../api_spcification.html" />
+    <link rel="next" title="6. License" href="../license.html" />
+    <link rel="prev" title="3. FileStatus" href="class_FileStatus.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../license.html" title="6. License"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_FileStatus.html" title="3. FileStatus"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">kyototycoon 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../api_spcification.html" accesskey="U">5. API Specification</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="exceptions">
+<h1>2. Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h1>
+<dl class="exception">
+<dt id="kyototycoon.kyototycoon.Error">
+<em class="property">exception </em><tt class="descclassname">kyototycoon.kyototycoon.</tt><tt class="descname">Error</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#kyototycoon.kyototycoon.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+<p>Base class for all exceptions</p>
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.Error.code">
+<tt class="descname">code</tt><big>(</big><em>self</em><big>)</big> &rarr; Code<a class="headerlink" href="#kyototycoon.kyototycoon.Error.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.Error.message">
+<tt class="descname">message</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.Error.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.Error.name">
+<tt class="descname">name</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.Error.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="kyototycoon.kyototycoon.InternalError">
+<em class="property">exception </em><tt class="descclassname">kyototycoon.kyototycoon.</tt><tt class="descname">InternalError</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#kyototycoon.kyototycoon.InternalError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kyototycoon.kyototycoon.Error" title="kyototycoon.kyototycoon.Error"><tt class="xref py py-class docutils literal"><span class="pre">kyototycoon.kyototycoon.Error</span></tt></a></p>
+<p>Proxy of C++ kyototycoon::InternalError class</p>
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.InternalError.code">
+<tt class="descname">code</tt><big>(</big><em>self</em><big>)</big> &rarr; Code<a class="headerlink" href="#kyototycoon.kyototycoon.InternalError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.InternalError.message">
+<tt class="descname">message</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.InternalError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.InternalError.name">
+<tt class="descname">name</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.InternalError.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="kyototycoon.kyototycoon.InvalidError">
+<em class="property">exception </em><tt class="descclassname">kyototycoon.kyototycoon.</tt><tt class="descname">InvalidError</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#kyototycoon.kyototycoon.InvalidError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kyototycoon.kyototycoon.Error" title="kyototycoon.kyototycoon.Error"><tt class="xref py py-class docutils literal"><span class="pre">kyototycoon.kyototycoon.Error</span></tt></a></p>
+<p>Proxy of C++ kyototycoon::InvalidError class</p>
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.InvalidError.code">
+<tt class="descname">code</tt><big>(</big><em>self</em><big>)</big> &rarr; Code<a class="headerlink" href="#kyototycoon.kyototycoon.InvalidError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.InvalidError.message">
+<tt class="descname">message</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.InvalidError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.InvalidError.name">
+<tt class="descname">name</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.InvalidError.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="kyototycoon.kyototycoon.LogicError">
+<em class="property">exception </em><tt class="descclassname">kyototycoon.kyototycoon.</tt><tt class="descname">LogicError</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#kyototycoon.kyototycoon.LogicError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kyototycoon.kyototycoon.Error" title="kyototycoon.kyototycoon.Error"><tt class="xref py py-class docutils literal"><span class="pre">kyototycoon.kyototycoon.Error</span></tt></a></p>
+<p>Proxy of C++ kyototycoon::LogicError class</p>
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.LogicError.code">
+<tt class="descname">code</tt><big>(</big><em>self</em><big>)</big> &rarr; Code<a class="headerlink" href="#kyototycoon.kyototycoon.LogicError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.LogicError.message">
+<tt class="descname">message</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.LogicError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.LogicError.name">
+<tt class="descname">name</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.LogicError.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="kyototycoon.kyototycoon.MiscError">
+<em class="property">exception </em><tt class="descclassname">kyototycoon.kyototycoon.</tt><tt class="descname">MiscError</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#kyototycoon.kyototycoon.MiscError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kyototycoon.kyototycoon.Error" title="kyototycoon.kyototycoon.Error"><tt class="xref py py-class docutils literal"><span class="pre">kyototycoon.kyototycoon.Error</span></tt></a></p>
+<p>Proxy of C++ kyototycoon::MiscError class</p>
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.MiscError.code">
+<tt class="descname">code</tt><big>(</big><em>self</em><big>)</big> &rarr; Code<a class="headerlink" href="#kyototycoon.kyototycoon.MiscError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.MiscError.message">
+<tt class="descname">message</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.MiscError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.MiscError.name">
+<tt class="descname">name</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.MiscError.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="kyototycoon.kyototycoon.NetworkError">
+<em class="property">exception </em><tt class="descclassname">kyototycoon.kyototycoon.</tt><tt class="descname">NetworkError</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#kyototycoon.kyototycoon.NetworkError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kyototycoon.kyototycoon.Error" title="kyototycoon.kyototycoon.Error"><tt class="xref py py-class docutils literal"><span class="pre">kyototycoon.kyototycoon.Error</span></tt></a></p>
+<p>Proxy of C++ kyototycoon::NetworkError class</p>
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.NetworkError.code">
+<tt class="descname">code</tt><big>(</big><em>self</em><big>)</big> &rarr; Code<a class="headerlink" href="#kyototycoon.kyototycoon.NetworkError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.NetworkError.message">
+<tt class="descname">message</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.NetworkError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.NetworkError.name">
+<tt class="descname">name</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.NetworkError.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="kyototycoon.kyototycoon.NoError">
+<em class="property">exception </em><tt class="descclassname">kyototycoon.kyototycoon.</tt><tt class="descname">NoError</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#kyototycoon.kyototycoon.NoError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kyototycoon.kyototycoon.Error" title="kyototycoon.kyototycoon.Error"><tt class="xref py py-class docutils literal"><span class="pre">kyototycoon.kyototycoon.Error</span></tt></a></p>
+<p>Proxy of C++ kyototycoon::NoError class</p>
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.NoError.code">
+<tt class="descname">code</tt><big>(</big><em>self</em><big>)</big> &rarr; Code<a class="headerlink" href="#kyototycoon.kyototycoon.NoError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.NoError.message">
+<tt class="descname">message</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.NoError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.NoError.name">
+<tt class="descname">name</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.NoError.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="kyototycoon.kyototycoon.NotImplementedError">
+<em class="property">exception </em><tt class="descclassname">kyototycoon.kyototycoon.</tt><tt class="descname">NotImplementedError</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#kyototycoon.kyototycoon.NotImplementedError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kyototycoon.kyototycoon.Error" title="kyototycoon.kyototycoon.Error"><tt class="xref py py-class docutils literal"><span class="pre">kyototycoon.kyototycoon.Error</span></tt></a></p>
+<p>Proxy of C++ kyototycoon::NotImplementedError class</p>
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.NotImplementedError.code">
+<tt class="descname">code</tt><big>(</big><em>self</em><big>)</big> &rarr; Code<a class="headerlink" href="#kyototycoon.kyototycoon.NotImplementedError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.NotImplementedError.message">
+<tt class="descname">message</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.NotImplementedError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.NotImplementedError.name">
+<tt class="descname">name</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.NotImplementedError.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="kyototycoon.kyototycoon.TimeoutError">
+<em class="property">exception </em><tt class="descclassname">kyototycoon.kyototycoon.</tt><tt class="descname">TimeoutError</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#kyototycoon.kyototycoon.TimeoutError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#kyototycoon.kyototycoon.Error" title="kyototycoon.kyototycoon.Error"><tt class="xref py py-class docutils literal"><span class="pre">kyototycoon.kyototycoon.Error</span></tt></a></p>
+<p>Proxy of C++ kyototycoon::TimeoutError class</p>
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.TimeoutError.code">
+<tt class="descname">code</tt><big>(</big><em>self</em><big>)</big> &rarr; Code<a class="headerlink" href="#kyototycoon.kyototycoon.TimeoutError.code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.TimeoutError.message">
+<tt class="descname">message</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.TimeoutError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="kyototycoon.kyototycoon.TimeoutError.name">
+<tt class="descname">name</tt><big>(</big><em>self</em><big>)</big> &rarr; string<a class="headerlink" href="#kyototycoon.kyototycoon.TimeoutError.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_FileStatus.html"
+                        title="previous chapter">3. FileStatus</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../license.html"
+                        title="next chapter">6. License</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/exceptions.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../license.html" title="6. License"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="class_FileStatus.html" title="3. FileStatus"
+             >previous</a> |</li>
+        <li><a href="../index.html">kyototycoon 0.0.1 documentation</a> &raquo;</li>
+          <li><a href="../api_spcification.html" >5. API Specification</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Benjamin Schulz.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -37,9 +37,6 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li class="right" >
           <a href="tutorial.html" title="3. Tutorial"
              accesskey="N">next</a> |</li>
         <li class="right" >
@@ -78,15 +75,15 @@ make install
 #compile the module itself:
 git clone git://github.com/beschulz/kyototycoon.git
 cd kyototycoon
+
+#warning: this also installs the pykt emulation layer. make sure to uninstall pykt first, so that you do not get weird conflicts
 python setup.py install
 
 # (optional, but highly recommended) run the tests
-pip install nose
-nosetests tests
+python setup.py nosetests
 
 # (optional) build documentation
-pip install Sphinx
-make docs</pre>
+python setup.py build_sphinx</pre>
 </div>
 </div>
 
@@ -136,9 +133,6 @@ make docs</pre>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
         <li class="right" >
           <a href="tutorial.html" title="3. Tutorial"
              >next</a> |</li>
