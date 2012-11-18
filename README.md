@@ -27,9 +27,9 @@ The following is the output of benchmark.py it's a modified version of the bench
 	   pykt emu 0.9092319011688 0.6884479522705 2.6841168403625 0.6197800636292 0.6409928798676 5.5425696372986
 
 
-pykt: https://github.com/mopemope/pykt (outdated, does not pass its own tests anymore)
-kyototycoon: this module
-pykt emu: an pykt emulation layer provided by kyototycoon
+* pykt: https://github.com/mopemope/pykt (outdated, does not pass its own tests anymore)
+* kyototycoon: this module
+* pykt emu: an pykt emulation layer provided by kyototycoon
 
 
 # Donations
