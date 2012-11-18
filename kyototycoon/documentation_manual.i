@@ -33,14 +33,20 @@
 
 %feature("docstring", "Creates a new cursor.
 
-:returns: the new cursor") kyototycoon::DB::cursor;
+:rtype: :py:class:`kyototycoon.kyototycoon.Cursor`") kyototycoon::DB::cursor;
 
 
 
 
 %feature("docstring", "Get the last error encountered.
 
-:rtype: :py:class:`Error`") kyototycoon::DB::error;
+:rtype: :py:class:`kyototycoon.kyototycoon.Error`") kyototycoon::DB::error;
+
+
+
+%feature("docstring", "Get the last error encountered.
+
+:rtype: :py:class:`kyototycoon.kyototycoon.Error`") kyototycoon::Cursor::error;
 
 
 
@@ -102,3 +108,12 @@
 %feature("docstring", "Time stamp of the file
 
 ") kyototycoon::FileStatus::ts;
+
+
+
+
+
+
+%feature("docstring", "Base class for all exceptions
+
+") kyototycoon::Error;

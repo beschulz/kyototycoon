@@ -85,48 +85,48 @@ namespace kyototycoon
 	:pimpl(o)
 	{}
 
-	boolean Cursor::set_value(const string& value, const long long xt, const boolean step)
+	bool Cursor::set_value(const string& value, const long long xt, const bool step)
 	{
 		return pimpl->set_value_str(value, xt, step);
 	}
 	
-	boolean Cursor::remove()
+	bool Cursor::remove()
 	{
 		return pimpl->remove();
 	}
 
-	string Cursor::get_key(const boolean step) throw(Error)
+	string Cursor::get_key(const bool step) throw(Error)
 	{
 		string ret;
 		if (!pimpl->get_key(&ret, step)) Error::translate( pimpl->error() );
 		return ret;
 	}
 
-	string Cursor::get_value(const boolean step) throw(Error)
+	string Cursor::get_value(const bool step) throw(Error)
 	{
 		string ret;
 		if (!pimpl->get_value(&ret, step)) Error::translate( pimpl->error() );
 		return ret;
 	}
 
-	boolean Cursor::jump(const string key)
+	bool Cursor::jump(const string key)
 	{
 		if (key.empty()) return pimpl->jump();
 		else             return pimpl->jump(key);
 	}
 
-	boolean Cursor::jump_back(const string key)
+	bool Cursor::jump_back(const string key)
 	{
 		if (key.empty()) return pimpl->jump_back();
 		else             return pimpl->jump_back(key);
 	}
 
-	boolean Cursor::step()
+	bool Cursor::step()
 	{
 		return pimpl->step();
 	}
 	
-	boolean Cursor::step_back()
+	bool Cursor::step_back()
 	{
 		return pimpl->step_back();
 	}
@@ -160,12 +160,12 @@ namespace kyototycoon
 		return Error( pimpl->error() );
 	}
 
-	boolean DB::open(const string& host, const int32_t port, const double timeout)
+	bool DB::open(const string& host, const long long port, const double timeout)
 	{
-		return pimpl->open(host, port, timeout);
+		return pimpl->open(host, (int32_t)port, timeout);
 	}
 
-	boolean DB::close()
+	bool DB::close()
 	{
 		return pimpl->close();
 	}
@@ -184,7 +184,7 @@ namespace kyototycoon
 		return result;
 	}
 
-	boolean DB::tune_replication(const string& host, const int32_t port, const long long ts, const double iv)
+	bool DB::tune_replication(const string& host, const int32_t port, const long long ts, const double iv)
 	{
 		return pimpl->tune_replication(host, port, ts, iv);
 	}
@@ -206,7 +206,7 @@ namespace kyototycoon
 		return ret;
 	}
 	
-	boolean DB::ulog_remove(const long long ts)
+	bool DB::ulog_remove(const long long ts)
 	{
 		return pimpl->ulog_remove(ts);
 	}
@@ -218,7 +218,7 @@ namespace kyototycoon
 		return ret;
 	}
 	
-	boolean DB::clear()
+	bool DB::clear()
 	{
 		return pimpl->clear();
 	}
@@ -233,22 +233,22 @@ namespace kyototycoon
 		return pimpl->size();
 	}
 
-	boolean DB::set(const string& key, const string& value, const long long xt)
+	bool DB::set(const string& key, const string& value, const long long xt)
 	{
 		return pimpl->set(key, value, xt);
 	}
 
-	boolean DB::add(const string& key, const string& value, const long long xt)
+	bool DB::add(const string& key, const string& value, const long long xt)
 	{
 		return pimpl->add(key, value, xt);
 	}
 
-	boolean DB::replace(const string& key, const string& value, const long long xt)
+	bool DB::replace(const string& key, const string& value, const long long xt)
 	{
 		return pimpl->replace(key, value, xt);
 	}
 
-	boolean DB::append(const string& key, const string& value, const long long xt)
+	bool DB::append(const string& key, const string& value, const long long xt)
 	{
 		return pimpl->append(key, value, xt);
 	}
@@ -263,7 +263,7 @@ namespace kyototycoon
 		return pimpl->increment_double(key, num, orig, xt);
 	}
 
-	boolean DB::cas(const string& key, const string& oval, const string& nval, const long long xt)
+	bool DB::cas(const string& key, const string& oval, const string& nval, const long long xt)
 	{
 		return pimpl->cas(key.c_str(), key.size(),
             		oval.empty()?0:oval.c_str(), oval.size(),
@@ -271,7 +271,7 @@ namespace kyototycoon
 		//return pimpl->cas(key, oval, nval, xt);
 	}
 
-	boolean DB::remove(const string& key)
+	bool DB::remove(const string& key)
 	{
 		return pimpl->remove(key);
 	}
@@ -307,7 +307,7 @@ namespace kyototycoon
 		return ret;
 	}
 
-	boolean DB::vacuum(const long long steps)
+	bool DB::vacuum(const long long steps)
 	{
 		return pimpl->vacuum(steps);
 	}
@@ -326,7 +326,7 @@ namespace kyototycoon
 		return ret;
 	}
 
-	List DB::match_similar(const string origin, const long long range, const boolean utf, const long long max) throw(Error)
+	List DB::match_similar(const string origin, const long long range, const bool utf, const long long max) throw(Error)
 	{
 		List ret;
 		pimpl->match_similar(origin, range, utf, &ret, max);

@@ -98,7 +98,11 @@ SwigPyIterator_swigregister(SwigPyIterator)
 
 SHARED_PTR_DISOWN = _kyototycoon.SHARED_PTR_DISOWN
 class Error(Exception):
-    """Proxy of C++ kyototycoon::Error class"""
+    """
+    Base class for all exceptions
+
+
+    """
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, Error, name, value)
     __swig_getmethods__ = {}
@@ -264,7 +268,7 @@ class Cursor(_object):
     __repr__ = _swig_repr
     def set_value(self, *args, **kwargs):
         """
-        set_value(self, string value, long long xt = max_ts, boolean step = False) -> boolean
+        set_value(self, string value, long long xt = max_ts, bool step = False) -> bool
 
         Set the value of the current record.
 
@@ -276,7 +280,7 @@ class Cursor(_object):
 
     def remove(self):
         """
-        remove(self) -> boolean
+        remove(self) -> bool
 
         Remove the current record.
 
@@ -285,7 +289,7 @@ class Cursor(_object):
 
     def get_key(self, step = False):
         """
-        get_key(self, boolean step = False) -> string
+        get_key(self, bool step = False) -> string
 
         Get the key of the current record.
 
@@ -295,7 +299,7 @@ class Cursor(_object):
 
     def get_value(self, step = False):
         """
-        get_value(self, boolean step = False) -> string
+        get_value(self, bool step = False) -> string
 
         Get the value of the current record.
 
@@ -305,7 +309,7 @@ class Cursor(_object):
 
     def jump(self, key = ""):
         """
-        jump(self, string key = "") -> boolean
+        jump(self, string key = "") -> bool
 
         Jump the cursor to the first record for forward scan.
 
@@ -315,7 +319,7 @@ class Cursor(_object):
 
     def jump_back(self, key = ""):
         """
-        jump_back(self, string key = "") -> boolean
+        jump_back(self, string key = "") -> bool
 
         Jump the cursor to a record for forward scan.
 
@@ -325,7 +329,7 @@ class Cursor(_object):
 
     def step(self):
         """
-        step(self) -> boolean
+        step(self) -> bool
 
         Step the cursor to the next record.
 
@@ -334,7 +338,7 @@ class Cursor(_object):
 
     def step_back(self):
         """
-        step_back(self) -> boolean
+        step_back(self) -> bool
 
         Step the cursor to the previous record.
 
@@ -342,7 +346,13 @@ class Cursor(_object):
         return _kyototycoon.Cursor_step_back(self)
 
     def error(self):
-        """error(self) -> Error"""
+        """
+        error(self) -> Error
+
+        Get the last error encountered.
+
+        :rtype: :py:class:`kyototycoon.kyototycoon.Error`
+        """
         return _kyototycoon.Cursor_error(self)
 
     def get(self, step = False):
@@ -409,13 +419,13 @@ class DB(_object):
 
         Get the last error encountered.
 
-        :rtype: :py:class:`Error`
+        :rtype: :py:class:`kyototycoon.kyototycoon.Error`
         """
         return _kyototycoon.DB_error(self)
 
     def open(self, *args, **kwargs):
         """
-        open(self, string host = "", int32_t port = 1978, double timeout = -1.0) -> boolean
+        open(self, string host = "", long long port = 1978, double timeout = -1.0) -> bool
 
         Open the database connection
 
@@ -430,7 +440,7 @@ class DB(_object):
 
     def close(self):
         """
-        close(self) -> boolean
+        close(self) -> bool
 
         Close the database connection.
 
@@ -463,7 +473,7 @@ class DB(_object):
     def tune_replication(self, *args, **kwargs):
         """
         tune_replication(self, string host = "", int32_t port = 1978, long long ts = max_ts, 
-            double iv = -1) -> boolean
+            double iv = -1) -> bool
 
         Set the replication configuration.
 
@@ -479,7 +489,7 @@ class DB(_object):
         return _kyototycoon.DB_ulog_list(self)
 
     def ulog_remove(self, *args, **kwargs):
-        """ulog_remove(self, long long ts = max_ts) -> boolean"""
+        """ulog_remove(self, long long ts = max_ts) -> bool"""
         return _kyototycoon.DB_ulog_remove(self, *args, **kwargs)
 
     def status(self):
@@ -496,7 +506,7 @@ class DB(_object):
 
     def clear(self):
         """
-        clear(self) -> boolean
+        clear(self) -> bool
 
         Remove all records in a database.
 
@@ -519,7 +529,7 @@ class DB(_object):
 
     def set(self, *args, **kwargs):
         """
-        set(self, string key, string value, long long xt = max_ts) -> boolean
+        set(self, string key, string value, long long xt = max_ts) -> bool
 
         Set the value of a record.
 
@@ -531,7 +541,7 @@ class DB(_object):
 
     def add(self, *args, **kwargs):
         """
-        add(self, string key, string value, long long xt = max_ts) -> boolean
+        add(self, string key, string value, long long xt = max_ts) -> bool
 
         Add a record.
 
@@ -543,7 +553,7 @@ class DB(_object):
 
     def replace(self, *args, **kwargs):
         """
-        replace(self, string key, string value, long long xt = max_ts) -> boolean
+        replace(self, string key, string value, long long xt = max_ts) -> bool
 
         Replace the value of a record.
 
@@ -555,7 +565,7 @@ class DB(_object):
 
     def append(self, *args, **kwargs):
         """
-        append(self, string key, string value, long long xt = max_ts) -> boolean
+        append(self, string key, string value, long long xt = max_ts) -> bool
 
         Append the value of a record.
 
@@ -596,7 +606,7 @@ class DB(_object):
 
     def cas(self, *args, **kwargs):
         """
-        cas(self, string key, string oval = "", string nval = "", long long xt = max_ts) -> boolean
+        cas(self, string key, string oval = "", string nval = "", long long xt = max_ts) -> bool
 
         Perform compare-and-swap.
 
@@ -609,7 +619,7 @@ class DB(_object):
 
     def remove(self, *args, **kwargs):
         """
-        remove(self, string key) -> boolean
+        remove(self, string key) -> bool
 
         Remove a record.
 
@@ -681,7 +691,7 @@ class DB(_object):
 
     def vacuum(self, *args, **kwargs):
         """
-        vacuum(self, long long steps) -> boolean
+        vacuum(self, long long steps) -> bool
 
         Scan the database and eliminate regions of expired records.
 
@@ -717,7 +727,7 @@ class DB(_object):
 
     def match_similar(self, *args, **kwargs):
         """
-        match_similar(self, string origin, long long range, boolean utf, long long max = -1) -> List
+        match_similar(self, string origin, long long range, bool utf, long long max = -1) -> List
 
         Get keys similar to a string in terms of the levenshtein distance.
 
@@ -757,7 +767,7 @@ class DB(_object):
 
         Creates a new cursor.
 
-        :returns: the new cursor
+        :rtype: :py:class:`kyototycoon.kyototycoon.Cursor`
         """
         return _kyototycoon.DB_cursor(self)
 

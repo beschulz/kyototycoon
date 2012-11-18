@@ -2,7 +2,7 @@ Getting started
 =======================================
 
 Installation
-==================
+=======================================
 
 .. code:: bash
 
@@ -25,12 +25,12 @@ Installation
 	#compile the module itself:
 	git clone git://github.com/beschulz/kyototycoon.git
 	cd kyototycoon
+
+	#warning: this also installs the pykt emulation layer. make sure to uninstall pykt first, so that you do not get weird conflicts
 	python setup.py install
 
 	# (optional, but highly recommended) run the tests
-	pip install nose
-	nosetests tests
+	python setup.py nosetests
 
 	# (optional) build documentation
-	pip install Sphinx
-	make docs
+	python setup.py build_sphinx

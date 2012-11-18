@@ -27,6 +27,13 @@ LIBS = -lkyototycoon -lkyotocabinet -lpython -lstdc++
 #-I/usr/local/include \
 #-I/usr/include
 
+help:
+	@echo make help
+	@echo make all
+	@echo make doc
+	@echo make unittests
+	
+
 #-D__x86_64__ -D__DARWIN_ALIAS_C 
 ./src/documentation.i : ./doc/generate_swig_doc.py ./doc/rpc_doc.txt
 	cd doc; python generate_swig_doc.py
@@ -58,3 +65,4 @@ clean:
 	rm -f ./src/kyototycoon_wrap.cpp
 	rm -f ./src/kyototycoon.py
 	cd doc; make clean
+	rm -Rf build

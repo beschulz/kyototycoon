@@ -52,7 +52,7 @@ namespace kyototycoon {
 	class DB;
 
 	typedef std::string string;
-	typedef bool boolean;
+	//typedef bool bool;
 
 	//----------------------------------------------------------------
 	// list of strings (substituted by the native mechanism)
@@ -164,14 +164,14 @@ namespace kyototycoon {
 		public:
 			typedef std::tr1::shared_ptr<Cursor> ptr;
 
-			boolean set_value(const string& value, const long long xt=max_ts, const boolean step=false);
-			boolean remove();
-			string get_key(const boolean step=false) throw(Error);
-			string get_value(const boolean step=false) throw(Error);
-			boolean jump(const string key="");
-			boolean jump_back(const string key="");
-			boolean step();
-			boolean step_back();
+			bool set_value(const string& value, const long long xt=max_ts, const bool step=false);
+			bool remove();
+			string get_key(const bool step=false) throw(Error);
+			string get_value(const bool step=false) throw(Error);
+			bool jump(const string key="");
+			bool jump_back(const string key="");
+			bool step();
+			bool step_back();
 			//DB db();
 			Error error();
 
@@ -204,38 +204,38 @@ namespace kyototycoon {
 			~DB();
 
 			Error error();
-			boolean open(const string& host="", const int32_t port=1978, const double timeout=-1.0);
-			boolean close();
+			bool open(const string& host="", const long long port=1978, const double timeout=-1.0);
+			bool close();
 			Map report() throw(Error);
 			Map play_script(const string& name, const Map& args) throw(Error);
-			boolean tune_replication(
+			bool tune_replication(
 				const string& host="",
 				const int32_t port=1978,
 				const long long ts=max_ts,
 				const double iv=-1);
 			FileStatusList ulog_list() throw(Error);
-			boolean ulog_remove(const long long ts=max_ts);
+			bool ulog_remove(const long long ts=max_ts);
 			Map status() throw(Error);
-			boolean clear();
+			bool clear();
 			long long count();
 			long long size();
-			boolean set(const string& key, const string& value, const long long xt=max_ts);
-			boolean add(const string& key, const string& value, const long long xt=max_ts);
-			boolean replace(const string& key, const string& value, const long long xt=max_ts);
-			boolean append(const string& key, const string& value, const long long xt=max_ts);
+			bool set(const string& key, const string& value, const long long xt=max_ts);
+			bool add(const string& key, const string& value, const long long xt=max_ts);
+			bool replace(const string& key, const string& value, const long long xt=max_ts);
+			bool append(const string& key, const string& value, const long long xt=max_ts);
 			long long increment(const string& key, const long long num=1, const long long orig=0, const long long xt=max_ts);
 			double increment_double(const string& key, const double num=1.0, const double orig=0.0, const long long xt=max_ts);
-			boolean cas(const string& key, const string& oval="", const string& nval="", const long long xt=max_ts);
-			boolean remove(const string& key);
+			bool cas(const string& key, const string& oval="", const string& nval="", const long long xt=max_ts);
+			bool remove(const string& key);
 			string get(const string& key) throw(Error);;
 			string seize(const string& key) throw(Error);;
 			long long set_bulk(const Map& recs, const long long xt=max_ts, bool atomic=true);
 			long long remove_bulk(const List keys, bool atomic=true);
 			Map get_bulk(const List& keys, bool atomic=true) throw(Error);
-			boolean vacuum(const long long steps);
+			bool vacuum(const long long steps);
 			List match_prefix(const string prefix, const long long max=-1) throw(Error);
 			List match_regex(const string regex, const long long max=-1) throw(Error);
-			List match_similar(const string origin, const long long range, const boolean utf, const long long max=-1) throw(Error);
+			List match_similar(const string origin, const long long range, const bool utf, const long long max=-1) throw(Error);
 			void set_target(const string expr);
 			string expression();
 			Cursor::ptr cursor();
