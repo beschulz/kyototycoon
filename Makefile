@@ -1,3 +1,26 @@
+#
+# This file is part of the Songbird web player.
+#
+# Copyright(c) Benjamin Schulz (beschulz[the a with the stuff]betabugs.de)
+# https://github.com/beschulz/kyototycoon
+#
+# This file may be licensed under the terms of of the
+# GNU General Public License Version 2 (the ``GPL'').
+#
+# Software distributed under the License is distributed
+# on an ``AS IS'' basis, WITHOUT WARRANTY OF ANY KIND, either
+# express or implied. See the GPL for the specific language
+# governing rights and limitations.
+#
+# You should have received a copy of the GPL along with this
+# program. If not, go to http://www.gnu.org/licenses/gpl.html
+# or write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+#
+
+# The purpose of this file is beeing able to generate the docs without having to install the module.
+
+
 INCLUDE_DIRS = -I/usr/include/python2.7 -I/usr/include/c++
 CXXFLAGS = -m64 -g -O3 -Wall -fPIC -fsigned-char -g0 -O2 -Os
 LIBS = -lkyototycoon -lkyotocabinet -lpython -lstdc++
