@@ -48,3 +48,4 @@ virtualenv.py
 src/kyototycoon_wrap.cpp
 
 src/kyototycoon.py
+_sources
