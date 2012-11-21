@@ -23,7 +23,11 @@
 #include <vector>
 #include <map>
 #include <tr1/memory>
-#include <tr1/boost_shared_ptr.h>
+#ifdef __APPLE__
+#       include <tr1/boost_shared_ptr.h>
+#else
+#       include <tr1/shared_ptr.h>
+#endif /* __APPLE__ */
 #include <unistd.h>
 #include <ktremotedb.h>
 //#	include "../myconf.h"
